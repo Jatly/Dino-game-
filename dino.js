@@ -55,31 +55,31 @@ window.onload = function() {
     // context.fillRect(dino.x, dino.y, dino.width, dino.height);
 
     dinoImg = new Image();
-    dinoImg.src = "./dino.png";
+    dinoImg.src = "dino.png";
     dinoImg.onload = function() {
         context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
     }
 
     cactus1Img = new Image();
-    cactus1Img.src = "./cactus1.png";
+    cactus1Img.src = "cactus1.png";
 
     cactus2Img = new Image();
-    cactus2Img.src = "./cactus2.png";
+    cactus2Img.src = "cactus2.png";
 
     cactus3Img = new Image();
-    cactus3Img.src = "./cactus3.png";
+    cactus3Img.src = "cactus3.png";
 
     requestAnimationFrame(update);
     setInterval(placeCactus, 1000); //1000 milliseconds = 1 second
     document.addEventListener("keydown", moveDino);
 }
 let bgImage = new Image();
-bgImage.src="./back.png";
+bgImage.src="back.png";
 // Load the game over image
 
 
 let gameoverImg = new Image();
-gameoverImg.src = "./game-over.png";
+gameoverImg.src = "game-over.png";
 
 function showGameOver() {
     context.drawImage(gameoverImg, boardWidth / 2 - gameoverImg.width / 2, boardHeight / 2 - gameoverImg.height / 2);
@@ -108,7 +108,7 @@ function update() {
 
         if (detectCollision(dino, cactus)) {
             gameOver = true;
-            dinoImg.src = "./dino-dead.png";
+            dinoImg.src = "dino-dead.png";
             dinoImg.onload = function() {
                 context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
                 showGameOver();
